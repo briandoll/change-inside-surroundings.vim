@@ -32,7 +32,10 @@ Change inside quotes:
 * Given: `"The Guns of Brixton"`
 * `To replace the contents of the quotes I can use: <code>ci"</code>
 
-** This plugin provides a single command that works for all of these examples **
+**This plugin provides a single command that works for all of these examples.**
+
+
+Use: `:ChangeContainer` or `<leader>ci` and vim will remove the contents of the innermost container, leaving you in insert mode.
 
 
 Installation
