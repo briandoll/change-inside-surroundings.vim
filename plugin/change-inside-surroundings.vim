@@ -3,7 +3,7 @@
 " Maintainer:   Brian Doll <http://emphaticsolutions.com/>
 " Version:      0.1
 
-function! s:ChangeInsideSurrounding()
+function! s:ChangeSurrounding(movement)
   " define 'surrounding' opening characters that we want to be able to change
   let surrounding_beginnings = ['{', '(', '"', '>', '[', "'"]
   let cursor_position = col('.')
@@ -15,10 +15,10 @@ function! s:ChangeInsideSurrounding()
     if matched_beginning_index > -1
       if '>' == char
         " vim already understands HTML and XML tags so use that
-        execute "normal! cit"
+        execute "normal! c" . a:movement . "t"
       else
-        " change the text inside the 'surrounding' we found
-        execute "normal! ci" . char
+        " change (inside) the 'surrounding' we found
+        execute "normal! c" . a:movement . char
       endif
       " move one char right of that opening character
       execute "normal! l"
@@ -31,5 +31,7 @@ function! s:ChangeInsideSurrounding()
   endwhile
 endfunction
 
-command! ChangeInsideSurrounding :call <sid>ChangeInsideSurrounding()
+command! ChangeInsideSurrounding :call <sid>ChangeSurrounding("i")
+command! ChangeASurrounding :call <sid>ChangeSurrounding("a")
 nmap <script> <silent> <unique> <Leader>ci :ChangeInsideSurrounding<CR>
+nmap <script> <silent> <unique> <Leader>ca :ChangeASurrounding<CR>
