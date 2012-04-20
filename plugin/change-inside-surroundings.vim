@@ -8,6 +8,10 @@ function! s:ChangeSurrounding(movement)
   let surrounding_beginnings = ['{', '(', '"', '>', '[', "'", '`']
   let cursor_position = col('.')
   let line = getline('.')
+  " nasty hack to omit single appostrophy matching
+  if (count(split(line, '\zs'), "'") < 2)
+    let l = remove(surrounding_beginnings, index(surrounding_beginnings, "'"))
+  endif
   " walk the line backwards looking for the innermost 'surrounding' opening character
   while cursor_position > 0
     let char = line[cursor_position-1]
