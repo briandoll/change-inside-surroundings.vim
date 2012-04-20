@@ -1,7 +1,7 @@
 " change-inside-surroundings.vim - Single command to change the contents of
 " the innermost surroundings
 " Maintainer:   Brian Doll <http://emphaticsolutions.com/>
-" Version:      0.1
+" Version:      0.2
 
 function! s:ChangeSurrounding(movement)
   " define 'surrounding' opening characters that we want to be able to change
@@ -32,6 +32,6 @@ function! s:ChangeSurrounding(movement)
 endfunction
 
 command! ChangeInsideSurrounding :call <sid>ChangeSurrounding("i")
-command! ChangeASurrounding :call <sid>ChangeSurrounding("a")
+command! ChangeArroundSurrounding :call <sid>ChangeSurrounding("a")
 nmap <script> <silent> <unique> <Leader>ci :ChangeInsideSurrounding<CR>
-nmap <script> <silent> <unique> <Leader>ca :ChangeASurrounding<CR>
+nmap <script> <silent> <unique> <Leader>cas :ChangeArroundSurrounding<CR>

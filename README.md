@@ -33,12 +33,19 @@ Change inside brackets:
 Change inside quotes:
 
 * Given: `"The Guns of Brixton"`
-* `To replace the contents of the quotes I can use: <code>ci"</code>
+* To replace the contents of the quotes I can use: <code>ci"</code>
 
 **I wanted something simpler. This plugin provides a single command that works for all of these examples.**
 
-Use: `:ChangeInsideSurrounding` or `<leader>ci` and vim will remove the contents of the innermost 'surrounding', leaving you in insert mode.
+Currently supported surroundings are: `{}`, `()`, `""`, `><`, `[]`, `''`, \`\`
 
+
+Use
+---
+
+`:ChangeInsideSurrounding` or `<leader>ci` will remove the contents of the innermost 'surrounding', leaving you in insert mode.
+
+`:ChangeAroundSurrounding` or `<leader>cas` will remove the entire text object, including the 'surrounding' characters, leaving you in insert mode.
 
 Installation
 ------------
