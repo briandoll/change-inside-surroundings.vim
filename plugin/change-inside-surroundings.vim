@@ -32,6 +32,6 @@ function! s:ChangeSurrounding(movement)
 endfunction
 
 command! ChangeInsideSurrounding :call <sid>ChangeSurrounding("i")
-command! ChangeArroundSurrounding :call <sid>ChangeSurrounding("a")
+command! ChangeAroundSurrounding :call <sid>ChangeSurrounding("a")
 nmap <script> <silent> <unique> <Leader>ci :ChangeInsideSurrounding<CR>
-nmap <script> <silent> <unique> <Leader>cas :ChangeArroundSurrounding<CR>
+nmap <script> <silent> <unique> <Leader>cas :ChangeAroundSurrounding<CR>
