@@ -37,5 +37,11 @@ endfunction
 
 command! ChangeInsideSurrounding :call <sid>ChangeSurrounding("i")
 command! ChangeAroundSurrounding :call <sid>ChangeSurrounding("a")
-nmap <script> <silent> <unique> <Leader>ci :ChangeInsideSurrounding<CR>
-nmap <script> <silent> <unique> <Leader>cas :ChangeAroundSurrounding<CR>
+
+if !hasmapto(':ChangeInsideSurrounding<CR>')
+  nmap <script> <silent> <unique> <Leader>ci :ChangeInsideSurrounding<CR>
+endif
+
+if !hasmapto(':ChangeAroundSurrounding<CR>')
+  nmap <script> <silent> <unique> <Leader>cas :ChangeAroundSurrounding<CR>
+endif
