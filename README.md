@@ -13,7 +13,7 @@ as you specify the opening 'surrounding' character.  Vim also understands HTML
 and XML tags, so you can change inside those as well.  I wanted a _single_
 command that would intelligently just _do the right thing_.
 
-**Normal Vim can do this, man:**
+**Normal Vim can do this:**
 
 Change inside an HTML tag:
 
