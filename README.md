@@ -61,4 +61,4 @@ License
 -------
 
 Copyright (c) Brian Doll.  Distributed under the same terms as Vim itself.
-See `:help license`.
+See `:help license`
