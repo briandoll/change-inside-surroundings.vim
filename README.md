@@ -15,7 +15,7 @@ command that would intelligently just _do the right thing_.
 
 **Normal Vim can do this:**
 
-Change inside an HTML tag, yo:
+Change inside an HTML tag:
 
 * Given: `<div>London Calling</div>`
 * To replace the contents of the div tag I can use: `cit`
