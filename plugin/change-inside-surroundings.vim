@@ -5,7 +5,7 @@
 
 function! s:ChangeSurrounding(movement)
   " define 'surrounding' opening characters that we want to be able to change
-  let surrounding_beginnings = ['{', '(', '"', '>', '[', "'", '`']
+  let surrounding_beginnings = ['{', '(', '"', '<', '[', "'", '`']
   let cursor_position = col('.')
   let line = getline('.')
   " nasty hack to omit single appostrophy matching
